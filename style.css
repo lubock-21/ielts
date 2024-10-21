@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: #333; /* Dark background */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: Arial, sans-serif;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    color: white;
+    font-size: 1.2em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.icon-link:hover {
+    color: #f39c12;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+/* Slider Content */
+.slider-container {
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .prev, .next {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.featured-anime, .anime-list, .reviews, .news, .gallery, .shop {
+    margin: 20px 0;
+}
+
+.anime-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+
+.anime-card img {
+    width: 100%;
+    height: auto;
+}
+
+.anime-card h3 {
+    margin: 10px 0;
+}
+
+.anime-card p {
+    padding: 0 10px;
+}
+
+.anime-card a {
+    display: block;
+    padding: 10px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.anime-card a:hover {
+    background: #e67e22;
+}
+.card a{
+    text-decoration: none;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.more-info {
+    display: block;
+    margin: 20px auto; /* Centers the button horizontally */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9e3313; /* Button color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-info:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333; /* Match navbar background color */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger menu icon */
+    }
+}
+
+/* Anime Cards Section */
+.anime-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Animation */
+    animation: card-fade-in 1s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card-content p {
+    margin: 10px 0 0;
+    color: #666;
+}
+
+/* Animation Keyframes */
+@keyframes card-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .anime-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+
+.scroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: background-color 0.3s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.scroll-button:hover {
+    background-color: #0056b3;
+}
